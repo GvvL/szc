@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="horizontal"
+    android:background="@drawable/choupon" 
+    android:id="@+id/coupon_ll">
+    <RelativeLayout 
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content">
+	    <TextView 
+	        android:id="@+id/coupon_size"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:textColor="@color/white"
+	        android:layout_gravity="center_vertical"
+	        android:textSize="40sp"
+	        android:layout_centerVertical="true"
+	        android:textStyle="bold"
+	        android:text="5"/>
+	    <TextView 
+	        android:layout_alignBottom="@id/coupon_size"
+	        android:layout_toRightOf="@id/coupon_size"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginBottom="10dp"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:textColor="@color/white"
+	        android:layout_gravity="center_vertical"
+	        android:textSize="@dimen/font_title"
+	        android:text="元"/>
+	     <View 
+	         android:layout_toRightOf="@id/coupon_size"
+	        android:id="@+id/coupon_line"
+	        android:layout_height="match_parent"
+	        android:layout_width="90dp"
+	        android:background="@drawable/act_coupon_line"
+	        />
+    </RelativeLayout>
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+        <TextView 
+            android:id="@+id/coupon_man"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_context"
+            android:text="满  20 可用"/>
+        <TextView
+            android:id="@+id/coupon_time" 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_context"
+            android:text="有效期至  2016/06/06"/>
+        
+        
+        
+        
+    </LinearLayout>
+    
+
+
+    
+
+</LinearLayout>

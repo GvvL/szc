@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff" >
+    <LinearLayout 
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/gray_bg"
+            android:text="提示信息"/>
+        <TextView 
+            android:id="@+id/act_cart_popup_ok" 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="17dp"
+            android:textColor="@color/red"
+            android:textSize="@dimen/font_context"
+            android:text="确定"/>
+    </LinearLayout>
+ 
+    <LinearLayout 
+        android:layout_height="180dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <ListView
+            android:id="@+id/act_cart_popup_listview1" 
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:divider="@null"
+            android:background="@color/gray_font"></ListView>
+        <ListView
+            android:id="@+id/act_cart_popup_listview2"  
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:divider="@null"
+            android:background="@color/gray_font"></ListView>
+        
+        
+    </LinearLayout>
+    
+
+</LinearLayout>

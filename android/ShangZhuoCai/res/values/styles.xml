@@ -1,0 +1,66 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowNoTitle">true</item> 
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+       <!--  LGDialog-->
+        <style name="custom_dialog" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 屏幕背景变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    	</style>
+    	
+    <!--评分  -->
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_store</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+    <!--页面跳转动画  -->
+    <style name="activityAnimation" parent="@android:style/Animation">  
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>  
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>  
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>  
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>  
+    </style> 
+    <!-- Loding_dialog样式Start -->
+    <style name="Dialog_bocop">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@+android:style/Animation.Dialog</item>
+    </style>
+    <!--popupwindow滚进滚出  -->
+    <style name="MyPopupAnimation">
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@anim/popwindow_out</item>
+        <item name="android:windowExitAnimation">@anim/popwindow_in</item>
+    </style>
+    
+ 
+
+</resources>

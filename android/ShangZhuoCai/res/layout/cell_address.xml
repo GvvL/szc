@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/act_address_cell_bg_off"
+    android:id="@+id/cell_address_ll"
+   >
+    <TextView
+        android:id="@+id/tv_address" 
+        android:layout_marginTop="@dimen/pad_lv5"
+        android:layout_marginLeft="@dimen/pad_lv7"
+        android:layout_marginRight="@dimen/pad_lv7"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:drawableLeft="@drawable/ic_tab6_cate2"
+        android:text="    潍坊市高新区潍坊软件园1107室"
+        android:textSize="@dimen/font_title"/>
+    <LinearLayout
+        android:layout_below="@id/tv_address" 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/pad_lv7"
+        android:layout_marginRight="@dimen/pad_lv7"
+        android:layout_marginBottom="@dimen/pad_lv5"
+        android:layout_marginTop="@dimen/pad_lv4"
+        android:orientation="horizontal">
+        <TextView 
+            android:id="@+id/tv_name"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_title"
+            android:text="柳岩 "/>
+        <TextView
+            android:id="@+id/tv_tel"
+            android:layout_marginLeft="@dimen/pad_lv7"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_title"
+            android:text="18362525478"/>
+        <TextView
+            android:id="@+id/tv_edit" 
+            android:layout_marginLeft="@dimen/pad_lv7"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/act_address_edit"/>
+        
+    </LinearLayout>
+    <ImageButton 
+        android:id="@+id/act_address_sel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_act_address_sel_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+    
+
+</RelativeLayout>

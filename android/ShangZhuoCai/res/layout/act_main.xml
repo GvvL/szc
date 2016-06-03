@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/black" >
+    <com.aydc.szc.widget.MViewPage
+        android:id="@+id/id_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:layout_above="@+id/id_btm_bar"
+        android:layout_alignParentTop="true">
+    </com.aydc.szc.widget.MViewPage>
+
+    <include layout="@layout/btm_bar" 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@id/id_btm_bar"/>
+    
+    <ImageButton
+        android:id="@+id/img_cart" 
+        android:layout_height="@dimen/nav_bar_hight"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_cart"
+        android:background="@null"
+        android:scaleX="0.9"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/pad_lv7"/>
+    <TextView 
+        android:id="@+id/tv_cart"
+        android:layout_height="14dp"
+        android:layout_width="14dp"
+        android:background="@drawable/cart_num_bg"
+        android:textSize="@dimen/font_little"
+        android:text="18"
+        android:fitsSystemWindows="true"
+        android:gravity="top|center_horizontal"
+        android:textColor="@color/black"
+        android:layout_alignTop="@id/img_cart"
+        android:layout_alignLeft="@id/img_cart"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="2dp"
+        android:paddingBottom="2dp"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+    
+
+</RelativeLayout>

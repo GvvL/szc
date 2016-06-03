@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_bottom_scale" format="float" type="dimen">0.9</item>
+    <item name="goods_alpha_start" format="float" type="dimen">0.4</item>
+    <item name="goods_alpha_start1" format="float" type="dimen">0.0</item>
+    
+</resources>

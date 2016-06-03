@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="135dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/tab4_like_bg" >
+
+	    <TextView 
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+	        android:padding="2dp"
+	        android:textSize="@dimen/font_little"
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:text="与你口味相同的人喜欢吃"/>
+	    <ImageView 
+	        android:layout_height="100dp"
+	        android:scaleType="fitXY"
+	        android:layout_width="135dp"
+	        android:src="@drawable/test_food"/>
+	    <TextView 
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+			android:padding="2dp"
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:textSize="@dimen/font_context"
+	        android:text="麻辣豆腐"/>
+	    <LinearLayout 
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+	        android:layout_marginLeft="4dp"
+	        android:layout_marginRight="4dp"
+	        android:layout_marginBottom="3dp"
+	        android:orientation="horizontal">
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:textSize="@dimen/font_context"
+	            android:textColor="@color/red"
+	            android:text="¥10"/>
+	        <ImageButton 
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:background="@drawable/shap_oval_gray_stroke"
+	            android:src="@drawable/cart_main_icon"
+	            android:padding="2dp"
+	            />
+	    </LinearLayout>
+
+    
+</LinearLayout>

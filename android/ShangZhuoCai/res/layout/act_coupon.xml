@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:fitsSystemWindows="true"
+    android:background="@color/black">
+    <RelativeLayout 
+        android:layout_height="@dimen/nav_bar_hight"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/pad_lv6"
+        android:paddingRight="@dimen/pad_lv6"
+        android:background="@color/black">
+        <ImageButton 
+            android:id="@+id/nav_bar_left"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_arrow_left_white"
+            android:background="@null"
+            android:layout_centerVertical="true"/>
+        <TextView 
+            android:id="@+id/nav_bar_title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/mycoupon"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/font_big"
+            />
+        <ImageButton 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_dele_white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"/>
+    </RelativeLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+         android:id="@+id/coupon_refreshview"
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:background="@color/white_bg"
+         >
+
+	        <android.support.v7.widget.RecyclerView
+		        android:id="@+id/coupon_recycleView"
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:scrollbars="none"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    
+
+</LinearLayout>

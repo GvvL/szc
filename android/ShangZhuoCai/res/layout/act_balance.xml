@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true" >
+    <RelativeLayout
+        android:id="@+id/nav_bar" 
+        android:layout_height="@dimen/nav_bar_hight"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/pad_lv6"
+        android:paddingRight="@dimen/pad_lv6"
+        android:background="@color/black">
+        <ImageButton 
+            android:id="@+id/nav_bar_left"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_arrow_left_white"
+            android:background="@null"
+            android:layout_centerVertical="true"/>
+        <TextView 
+            android:id="@+id/nav_bar_title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/mybalance"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/font_big"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@id/nav_bar" 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/white_bg"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/pad_lv7"
+        android:paddingRight="@dimen/pad_lv7">
+        <LinearLayout
+            android:layout_marginTop="@dimen/pad_lv8" 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/act_balance_cell_bg_off"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout 
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/act_balance_cell_bg_off">
+                <TextView 
+                    android:id="@+id/tv_str_balance"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="@dimen/pad_lv3"
+                    android:layout_marginTop="@dimen/pad_lv1"
+                    android:text="@string/mybalance"/>
+                <TextView
+                    android:id="@+id/balance_yue" 
+                    android:layout_below="@id/tv_str_balance"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="400.0"
+                    android:drawableLeft="@drawable/ic_money"
+                    android:layout_centerInParent="true"
+                    android:textSize="24sp"
+                    android:paddingBottom="@dimen/pad_lv6"/>
+                
+            </RelativeLayout>
+            <RelativeLayout 
+                android:id="@+id/balance_recharge"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@color/black">
+                
+                <TextView 
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:background="@drawable/act_balance_cell_bg_on"
+                    android:text="余额充值"
+                    android:paddingLeft="@dimen/pad_lv6"
+                    android:paddingRight="@dimen/pad_lv6"
+                    android:paddingTop="@dimen/pad_lv3"
+                    android:paddingBottom="@dimen/pad_lv3"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+            
+            
+            
+            
+        </LinearLayout>
+        
+        <TextView
+            android:layout_marginTop="@dimen/pad_lv8" 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="资金明细"/>
+        <View 
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/pad_lv3"
+            android:layout_marginBottom="@dimen/pad_lv3"
+            android:background="@color/gray_line"/>
+        <android.support.v7.widget.RecyclerView
+		        android:id="@+id/balance_recycleView"
+		        android:layout_height="match_parent"
+		        android:layout_width="match_parent"
+		        android:scrollbars="none"/>
+        
+        
+        
+        
+    </LinearLayout>
+    
+
+</RelativeLayout>

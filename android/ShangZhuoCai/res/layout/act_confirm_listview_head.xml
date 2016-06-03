@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    >
+	<LinearLayout 
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center">
+	 <TextView 
+	    android:id="@+id/act_confirm_listview_head_icon"
+	    android:layout_marginLeft="10dp"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_gravity="clip_vertical"
+	    android:textSize="@dimen/font_title_big"
+	    android:textColor="@color/gray_font"
+	    android:paddingBottom="8dp"
+	    android:text="\uE616"/>
+	<TextView
+	    android:id="@+id/act_confirm_listview_head_msgtitle"
+	    android:layout_marginLeft="10dp" 
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:text="全部菜品"
+	    android:drawableLeft="@drawable/ic_confirm_menu"
+	    android:textSize="@dimen/font_title"
+	    android:textColor="@color/gray_font"/>
+	    
+	    
+	    
+	    
+	</LinearLayout>
+
+  
+    
+
+</LinearLayout>

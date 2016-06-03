@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+    <RelativeLayout 
+        android:id="@+id/tab6_nav_bar_ll"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    <LinearLayout 
+        android:id="@+id/tab6_nav_bar"
+        android:layout_height="@dimen/nav_bar_hight"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="@color/black"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tab6_nav_bar_title1" 
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal|bottom"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_big"
+            android:text="@string/str_personal_center_zh"/>
+        <TextView 
+            android:id="@+id/tab6_nav_bar_title2"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_little"
+            android:gravity="center_horizontal|top"
+            android:text="@string/str_personal_center_en"/>
+    </LinearLayout>
+    <ImageButton 
+        	android:id="@+id/tab6_setting"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_tab6_setting"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/pad_lv6"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            />
+    </RelativeLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+         android:id="@+id/tab6_refresh"
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_below="@id/tab6_nav_bar_ll"
+         >
+		<ScrollView 
+		    android:layout_height="wrap_content"
+		    android:layout_width="match_parent">
+        <RelativeLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            >
+		    <ImageView
+		        android:id="@+id/tab6_imageView_bg"
+		        android:layout_width="match_parent"
+		        android:layout_height="200dp"
+		        android:scaleType="fitXY"
+		        android:src="@drawable/test_bg" />
+		    
+		    <RelativeLayout 
+		        android:id="@+id/tab6_rl"
+		        android:layout_height="200dp"
+		        android:layout_width="match_parent"
+		        android:layout_alignTop="@id/tab6_imageView_bg"
+		        android:layout_alignBottom="@id/tab6_imageView_bg"
+		        android:background="#55000000">
+		        <com.aydc.szc.widget.MImageView 
+		            android:id="@+id/tab6_header"
+			        android:layout_height="100dp"
+			        android:layout_width="100dp"
+			        app:border_width="2.3dp"
+			        android:layout_centerInParent="true"
+			        app:border_color="@color/white"
+			        android:src="@drawable/test_no_login"/>
+		        
+		       <LinearLayout 
+		            android:layout_below="@id/tab6_header"
+		           	android:layout_height="wrap_content"
+		            android:layout_width="wrap_content"
+		            android:layout_marginTop="7dp"
+		            android:layout_centerHorizontal="true"
+		            >
+			        <TextView 
+			            android:id="@+id/tab6_tel"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:text="18363625201"
+			            android:textSize="@dimen/font_title_big"
+			            android:textStyle="bold"
+			            android:textColor="@color/white"
+			            android:visibility="gone"
+			            />
+			      <TextView 
+			          android:id="@+id/tab6_login"
+			            android:layout_height="wrap_content"
+			            android:layout_width="wrap_content"
+			            android:text="登录/注册"
+			            android:textSize="@dimen/font_big"
+			            android:textColor="@color/white"
+			            />
+					
+		           
+		           
+		           
+		       </LinearLayout>
+
+		    </RelativeLayout>
+		    <LinearLayout
+		        android:layout_below="@id/tab6_rl" 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:orientation="vertical"
+		        android:layout_marginTop="@dimen/pad_lv5"
+		        android:paddingLeft="@dimen/pad_lv5"
+		        android:paddingRight="@dimen/pad_lv7">
+		        <TextView
+		            android:id="@+id/tab6_cate1" 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:padding="@dimen/pad_lv5"
+		            android:text="    我的订单"
+		            android:gravity="center_vertical"
+		            android:textSize="@dimen/font_tab6_cate"
+		            android:drawableLeft="@drawable/ic_tab6_cate1"
+		            android:textColor="@color/gray2black_selector"
+		            android:clickable="true"
+		            />
+		        <View 
+		            android:layout_height="1dp"
+		            android:layout_width="match_parent"
+		            android:background="@color/gray_line"
+		            android:layout_marginLeft="@dimen/tab6_cate_left_margin"/>
+		        <TextView 
+		            android:id="@+id/tab6_cate2" 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:padding="@dimen/pad_lv5"
+		            android:text="    我的送货地址"
+		            android:gravity="center_vertical"
+		            android:textSize="@dimen/font_tab6_cate"
+		            android:drawableLeft="@drawable/ic_tab6_cate2"
+		            android:textColor="@color/gray2black_selector"
+		            android:clickable="true"/>
+		        <View 
+		            android:layout_height="1dp"
+		            android:layout_width="match_parent"
+		            android:background="@color/gray_line"
+		            android:layout_marginLeft="@dimen/tab6_cate_left_margin"/>
+		        <LinearLayout 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:orientation="horizontal">
+		            <TextView 
+			            android:id="@+id/tab6_cate3" 
+			            android:layout_height="wrap_content"
+			            android:layout_width="0dp"
+			            android:layout_weight="1"
+			            android:padding="@dimen/pad_lv5"
+			            android:text="    我的余额"
+			            android:gravity="center_vertical"
+			            android:textSize="@dimen/font_tab6_cate"
+			            android:drawableLeft="@drawable/ic_tab6_cate3"
+			            android:textColor="@color/gray2black_selector"
+		            	android:clickable="true"/>
+		            <TextView 
+		                android:layout_height="match_parent"
+		                android:layout_width="wrap_content"
+		                android:text="充值"
+		                android:gravity="center"
+		                android:background="@drawable/tab6_recharge_btn_bg"
+		                android:paddingLeft="30dp"
+		                android:paddingRight="30dp"
+		                android:layout_marginTop="@dimen/pad_lv1"
+		                android:layout_marginBottom="@dimen/pad_lv1"
+		                />
+		            
+		            
+		            
+		        </LinearLayout>
+		
+		        <View 
+		            android:layout_height="1dp"
+		            android:layout_width="match_parent"
+		            android:background="@color/gray_line"
+		            android:layout_marginLeft="@dimen/tab6_cate_left_margin"/>
+		        <TextView 
+		            android:id="@+id/tab6_cate4" 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:padding="@dimen/pad_lv5"
+		            android:text="    我的优惠券"
+		            android:gravity="center_vertical"
+		            android:textSize="@dimen/font_tab6_cate"
+		            android:drawableLeft="@drawable/ic_tab6_cate4"
+		            android:textColor="@color/gray2black_selector"
+		            android:clickable="true"/>
+		        <View 
+		            android:layout_height="1dp"
+		            android:layout_width="match_parent"
+		            android:background="@color/gray_line"
+		            android:layout_marginLeft="@dimen/tab6_cate_left_margin"/>
+		        <LinearLayout 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:orientation="horizontal">
+		            <TextView 
+			            android:id="@+id/tab6_cate5" 
+			            android:layout_height="wrap_content"
+			            android:layout_width="0dp"
+			            android:layout_weight="1"
+			            android:padding="@dimen/pad_lv5"
+			            android:text="    邀请好友"
+			            android:gravity="center_vertical"
+			            android:textSize="@dimen/font_tab6_cate"
+			            android:drawableLeft="@drawable/ic_tab6_cate5"
+			            android:textColor="@color/gray2black_selector"
+		           		android:clickable="true"/>
+		            <TextView 
+		                android:layout_height="wrap_content"
+		                android:layout_width="wrap_content"
+		                android:layout_gravity="center_vertical"
+		                android:textSize="@dimen/font_context"
+		                android:textColor="@color/red"
+		                android:text="邀请好友加入获取更多优惠"/>
+		            
+		            
+		        </LinearLayout>
+		
+		        <View 
+		            android:layout_height="1dp"
+		            android:layout_width="match_parent"
+		            android:background="@color/gray_line"
+		            android:layout_marginLeft="@dimen/tab6_cate_left_margin"/>
+		        <TextView 
+		            android:id="@+id/tab6_cate6" 
+		            android:layout_height="wrap_content"
+		            android:layout_width="match_parent"
+		            android:padding="@dimen/pad_lv5"
+		            android:text="    我的收藏"
+		            android:gravity="center_vertical"
+		            android:textSize="@dimen/font_tab6_cate"
+		            android:drawableLeft="@drawable/ic_tab6_cate6"
+		            android:textColor="@color/gray2black_selector"
+		            android:clickable="true"/>   
+		    </LinearLayout>
+		    </RelativeLayout>
+		 </ScrollView>
+	</android.support.v4.widget.SwipeRefreshLayout>
+		 
+
+    
+
+</RelativeLayout>

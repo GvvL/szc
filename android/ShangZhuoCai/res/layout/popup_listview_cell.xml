@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/activity_cart_popup_listview_cell_tv" 
+        android:layout_height="38dp"
+        android:layout_width="match_parent"
+        android:text="hehe"
+        android:textColor="@color/gray_font"
+        android:textSize="@dimen/font_title"
+        android:gravity="center"/>
+    
+
+</LinearLayout>

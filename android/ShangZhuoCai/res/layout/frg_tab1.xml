@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg"
+     >
+     <include
+         android:id="@+id/nar_bar" 
+         layout="@layout/frg_tab1_title"/>
+     <FrameLayout
+         android:layout_below="@id/nar_bar" 
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:animateLayoutChanges="true">
+	     <android.support.v4.widget.SwipeRefreshLayout
+	         android:id="@+id/tab1_refresh"
+	         android:layout_below="@id/nar_bar"
+	         android:layout_height="wrap_content"
+	         android:layout_width="match_parent"
+	         >
+	     <com.aydc.szc.widget.MScrollViewExtend
+	         android:id="@+id/scrollview"
+	         android:layout_height="wrap_content"
+	         android:layout_width="match_parent"
+	         >
+	         <LinearLayout 
+	             android:layout_height="wrap_content"
+	             android:layout_width="match_parent"
+	             android:orientation="vertical"
+	             >
+	             <include layout="@layout/frg_tab1_banner"/>
+	             
+	             <ImageView
+	                 android:layout_marginTop="@dimen/pad_lv7" 
+	                 android:layout_height="wrap_content"
+	                 android:layout_width="match_parent"
+	                 android:src="@drawable/ic_logo2"
+	                 android:scaleType="fitCenter"
+	                 android:paddingLeft="@dimen/pad_lv7"
+	             	android:paddingRight="@dimen/pad_lv7"/>
+	             <LinearLayout 
+	                 android:layout_marginTop="@dimen/pad_lv7"
+	                 android:layout_height="wrap_content"
+	                 android:layout_width="match_parent"
+	                 android:orientation="horizontal"
+	                 android:paddingLeft="@dimen/pad_lv7"
+	            	 android:paddingRight="@dimen/pad_lv7">
+	                 <ImageButton 
+	                     android:layout_height="wrap_content"
+	                     android:layout_width="0dp"
+	                     android:layout_weight="1"
+	                     android:src="@drawable/tab1_cate1"
+	                     android:background="@null"/>
+	                 <View 
+	                     android:layout_height="match_parent"
+	                     android:layout_width="@dimen/pad_lv4"/>
+	                 <ImageButton 
+	                     android:layout_height="wrap_content"
+	                     android:layout_width="0dp"
+	                     android:layout_weight="1"
+	                     android:src="@drawable/tab1_cate2"
+	                     android:background="@null"/>
+	             </LinearLayout>
+	             
+	             <View 
+	                 android:layout_marginTop="@dimen/pad_lv6"
+	                 android:layout_marginBottom="@dimen/pad_lv5"
+	                 android:layout_height="1dp"
+	                 android:layout_width="match_parent"
+	                 android:layout_marginRight="@dimen/pad_lv7"
+	             	 android:layout_marginLeft="@dimen/pad_lv7"
+	             	 android:background="@color/gray_font"/>
+	             
+	             <!--名菜推荐  -->
+	                 <LinearLayout 
+	                     android:layout_height="wrap_content"
+	                     android:layout_width="match_parent"
+	                     android:orientation="horizontal"
+	                     android:layout_marginLeft="@dimen/pad_lv7"
+	                     android:layout_marginRight="@dimen/pad_lv7">
+	                     <TextView
+	                         android:id="@+id/tab1_recommend_zh" 
+	                         android:layout_height="wrap_content"
+	                         android:layout_width="wrap_content"
+	                         android:text="@string/str_mingcai_recommend_zh"
+	                         android:textColor="@color/gray_font"
+	                         android:textSize="@dimen/font_big"/>
+	                     <TextView 
+	                         android:id="@+id/tab1_recommend_en"
+	                         android:layout_height="wrap_content"
+	                         android:layout_width="wrap_content"
+	                         android:text="@string/str_mingcai_recommend_en"
+	                         android:textColor="@color/red"
+	                         android:layout_marginLeft="@dimen/pad_lv5"/>
+	                 </LinearLayout>
+	                 <com.aydc.szc.widget.MListView
+	                     android:id="@+id/id_listview"
+	                     android:layout_height="wrap_content"
+	                     android:layout_width="match_parent"
+	                     android:layout_marginTop="@dimen/pad_lv3"
+	                     android:layout_marginLeft="@dimen/pad_lv7"
+	                     android:layout_marginRight="@dimen/pad_lv7"
+	                     android:dividerHeight="@dimen/pad_lv7"
+	                     android:divider="@color/white_bg"
+	                     android:scrollbars="none">
+	                 </com.aydc.szc.widget.MListView>
+	
+	             
+	         </LinearLayout>
+	     </com.aydc.szc.widget.MScrollViewExtend>
+	     
+	     </android.support.v4.widget.SwipeRefreshLayout>
+	     <RelativeLayout 
+	         android:id="@+id/tab1_loading_framlayout"
+	         android:layout_height="match_parent"
+	         android:layout_width="match_parent"
+	         android:background="@color/white_bg">
+	         
+	             <com.aydc.szc.widget.AVLoadingIndicatorView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerInParent="true"
+			        app:indicator_color="#999"
+			        app:indicator="LineSpinFadeLoader" />
+	         
+	     </RelativeLayout>
+	     
+	     
+	     </FrameLayout>
+    
+
+</RelativeLayout>
