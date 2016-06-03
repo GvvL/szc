@@ -1,6 +1,8 @@
 package com.aydc.szc.ui.frg;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
@@ -13,6 +15,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -23,14 +27,18 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 import com.aydc.szc.R;
+import com.aydc.szc.adaper.CondtionAdapter;
+import com.aydc.szc.adaper.CondtionAdapter.CondtionBean;
 import com.aydc.szc.adaper.Tab2RecAdapter;
 import com.aydc.szc.adaper.Tab2RecDecoration;
+import com.aydc.szc.app.Common;
 import com.aydc.szc.entity.DishBean;
 import com.aydc.szc.fram.ViewDelegate;
 import com.aydc.szc.util.AppUtil;
 import com.aydc.szc.util.FontUtil;
+import com.aydc.szc.util.Logger;
 
-public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
+public class Tab2View extends ViewDelegate implements AnimatorUpdateListener,OnItemClickListener{
 	@Bind(R.id.nav_bar_title1) TextView nav_bar_title1;
 	@Bind(R.id.nav_bar_title2) TextView nav_bar_title2;
 	@Bind(R.id.condition_1) TextView condition1;
@@ -44,14 +52,15 @@ public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
 	@Bind(R.id.tab2_rlayout) RelativeLayout tab2_rlayout;
 	@Bind(R.id.tab2_con_listview1) ListView tab2_con_listview1;
 	@Bind(R.id.tab2_con_listview2) ListView tab2_con_listview2;
+	private CondtionAdapter fliter_adapter1,fliter_adapter2;
 	private int condtion_status=0;//条件筛选展示收起的状态
 	Tab2RecAdapter adapter;
-	private int cont_tab2_height1;
+	private float cont_tab2_height1;
 	private float cont_tab2_height2;
-	private float alpa_float=0.4f;
-	private int alpa_anim_durtion=300;
-	private String[] contion_str1={"aa"};
-	private String[] contion_str2={"智能排序","价格","推荐人数","销售数量"};//智能排序  Sort ▼
+	private final float alpa_float=0.4f;
+	private final int alpa_anim_durtion=300;
+	private ArrayList<CondtionAdapter.CondtionBean> contion_str1=new ArrayList<>();
+	private ArrayList<CondtionAdapter.CondtionBean> contion_str2=new ArrayList<>();//{"智能排序","价格","推荐人数","销售数量"};//智能排序  Sort ▼
 	@Override
 	public int getRootLayoutId() {
 		return R.layout.frg_tab2;
@@ -66,8 +75,6 @@ public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
 		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 		mRecyclerView.addItemDecoration(new Tab2RecDecoration());
 		FontUtil.init(1, nav_bar_title1,nav_bar_title2,condition1,condition2);
-		tab2_con_listview1.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.popup_listview_cell,R.id.activity_cart_popup_listview_cell_tv, contion_str1));
-		tab2_con_listview2.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.popup_listview_cell,R.id.activity_cart_popup_listview_cell_tv, contion_str2));
 		tab2_stub.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
@@ -77,8 +84,6 @@ public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
 				return true;
 			}
 		});
-		int s=AppUtil.dp2px(38)*(contion_str1.length);
-		cont_tab2_height1=(int)((float)s/alpa_float);
 		makealpashade(tab2_con_listview1, 0);
 		makealpashade(tab2_con_listview2, 0);
 		
@@ -89,10 +94,38 @@ public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
 		//获取筛选条件
 		getContion1(dishes);
 	}
+	//获取条件个数
 	private void getContion1(ArrayList<DishBean> dishes) {
-		int s=AppUtil.dp2px(38)*(contion_str2.length);
-		cont_tab2_height2=((float)s/alpa_float);
+		contion_str2.clear();
+		for(String fname:Common.TAB2_FILTER_STR){
+			contion_str2.add(new CondtionBean(fname));
+		}
+		int s=AppUtil.dp2px(38)*(contion_str2.size());
+		cont_tab2_height2=((float)s/alpa_float);//高度计算
 		tab2_con_listview2.setTag(cont_tab2_height2);
+		
+		Set<String> set=new HashSet<String>();
+		for(DishBean dish:dishes){
+			set.add(dish.getType_title());
+		}
+		contion_str1.clear();
+		contion_str1.add(new CondtionBean("全部"));
+		for(String fname:set){
+			contion_str1.add(new CondtionBean(fname));
+		}
+
+		int s2=AppUtil.dp2px(38)*(contion_str1.size());
+		cont_tab2_height1=((float)s2/alpa_float);
+		tab2_con_listview1.setTag(cont_tab2_height1);
+		
+		fliter_adapter1=new CondtionAdapter(this, contion_str1);
+		fliter_adapter2=new CondtionAdapter(this, contion_str2);
+		tab2_con_listview1.setAdapter(fliter_adapter1);
+		tab2_con_listview2.setAdapter(fliter_adapter2);
+		tab2_con_listview1.setOnItemClickListener(this);
+		tab2_con_listview2.setOnItemClickListener(this);
+		fliter_adapter2.setSel(0);
+		fliter_adapter1.setSel(0);
 		
 	}
 
@@ -167,6 +200,33 @@ public class Tab2View extends ViewDelegate implements AnimatorUpdateListener{
 		lm.height=(int) (((float)v.getTag())*f);
 		v.setLayoutParams(lm);
 		
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		final String selname = ((CondtionAdapter)arg0.getAdapter()).setSel(arg2);
+		shadehidden();
+		condition1.postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				if(curr_tab.equals(tab2_con_listview1)){
+					condition1.setText(selname+"  Cuisine");
+				}else{
+					condition2.setText(selname+"  Sort");
+				}
+				adapter.filter(getfliterStr(condition1), getfliterStr(condition2));
+				
+			}
+		}, alpa_anim_durtion);
+
+	}
+	public String getfliterStr(TextView tv){
+		String text = tv.getText().toString();
+		String string = text.split("  ")[0];
+		Logger.e(string);
+		if(string.equals("品类")) string="全部";
+		return string;
 	}
 
 

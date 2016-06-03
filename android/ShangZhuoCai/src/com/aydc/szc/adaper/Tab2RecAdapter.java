@@ -1,6 +1,8 @@
 package com.aydc.szc.adaper;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import com.aydc.szc.R;
 import com.aydc.szc.app.Common;
@@ -32,6 +34,7 @@ public class Tab2RecAdapter extends RecyclerView.Adapter<ViewHolder>{
 	private LayoutInflater inflater;
 	private Context mcontext;
 	private ArrayList<DishBean> dishes=new ArrayList<>();
+	private ArrayList<DishBean> currdishes=new ArrayList<>();
 	
 	public Tab2RecAdapter(Context c) {
 		mcontext=c;
@@ -39,18 +42,34 @@ public class Tab2RecAdapter extends RecyclerView.Adapter<ViewHolder>{
 	}
 	public void setData(ArrayList<DishBean> dis){
 		dishes=dis;
+		filter(null, null);
+	}
+	public void filter(String f1,String f2){
+		if(f1==null||f1.equals("全部")){
+			currdishes=dishes;
+		}else{
+			currdishes=new ArrayList<>();
+			for(DishBean db:dishes){
+				if(db.getType_title().equals(f1)){
+					currdishes.add(db);
+				}
+			}
+		}
+		//排序
+		if(f2!=null)
+		Collections.sort(currdishes, new MySort(f2));
 		this.notifyDataSetChanged();
 	}
 	
 	
 	@Override
 	public int getItemCount() {
-		return dishes.size();
+		return currdishes.size();
 	}
 	@Override
 	public void onBindViewHolder(ViewHolder arg0, int arg1) {
 		final ViewH vh=(ViewH) arg0;
-		final DishBean dish=dishes.get(arg1);
+		final DishBean dish=currdishes.get(arg1);
 		vh.food_title.setText(dish.getTitle());
 		vh.cartbtn_left.setText("¥"+dish.getPrice()+"  "+dish.getType_title());
 		vh.food_desc.setText(dish.getDescription());
@@ -109,6 +128,31 @@ public class Tab2RecAdapter extends RecyclerView.Adapter<ViewHolder>{
 		public ViewH(View itemView) {
 			super(itemView);
 			ButterKnife.bind(this, itemView);
+		}
+		
+	}
+	class MySort implements Comparator<DishBean>{
+		String type;
+		public MySort(String t) {
+			type=t;
+		}
+		@Override
+		public int compare(DishBean lhs, DishBean rhs) {
+			int comp = 0;
+			switch (type) {
+			case "价格":
+				comp=(int) (lhs.getPrice()-rhs.getPrice());
+				break;
+			case "推荐人数":
+				comp=lhs.getRecommended()-rhs.getRecommended();
+				break;
+			case "销售数量":
+				comp=lhs.getNum()-rhs.getNum();
+				break;
+			default:
+				break;
+			}
+			return comp;
 		}
 		
 	}

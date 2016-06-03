@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hRz-kP-vbe" customClass="FliterView" customModule="shangzhuocai" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="407"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ai-Ut-u26">
+                    <rect key="frame" x="0.0" y="0.0" width="345" height="407"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="bgClick:" destination="hRz-kP-vbe" eventType="touchUpInside" id="wfC-mN-aHa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx7-Ha-jQ7">
+                    <rect key="frame" x="0.0" y="0.0" width="172" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="tD5-9A-Mav"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                    <state key="normal" title="菜系 Cuisine">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cate1click:" destination="hRz-kP-vbe" eventType="touchUpInside" id="zVO-G6-8OI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVU-OK-tA2">
+                    <rect key="frame" x="174" y="0.0" width="171" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                    <state key="normal" title="智能排序 Sort">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cate2click:" destination="hRz-kP-vbe" eventType="touchUpInside" id="y7h-24-zyx"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhl-iF-b4w">
+                    <rect key="frame" x="172" y="0.0" width="2" height="15"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="RWG-Yi-bvi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zhl-iF-b4w" firstAttribute="bottom" secondItem="iVU-OK-tA2" secondAttribute="bottom" constant="-35" id="2Jt-8Y-iZs"/>
+                <constraint firstItem="iVU-OK-tA2" firstAttribute="leading" secondItem="nx7-Ha-jQ7" secondAttribute="trailing" constant="2" id="3PO-7O-yn8"/>
+                <constraint firstItem="1ai-Ut-u26" firstAttribute="leading" secondItem="hRz-kP-vbe" secondAttribute="leading" id="6FH-JK-foI"/>
+                <constraint firstItem="zhl-iF-b4w" firstAttribute="bottom" secondItem="nx7-Ha-jQ7" secondAttribute="bottom" id="82d-io-lTM"/>
+                <constraint firstItem="1ai-Ut-u26" firstAttribute="top" secondItem="hRz-kP-vbe" secondAttribute="top" id="GJQ-yK-6aM"/>
+                <constraint firstItem="nx7-Ha-jQ7" firstAttribute="top" secondItem="hRz-kP-vbe" secondAttribute="top" id="HgP-Jc-sEd"/>
+                <constraint firstItem="zhl-iF-b4w" firstAttribute="centerX" secondItem="hRz-kP-vbe" secondAttribute="centerX" id="J0O-xk-Mj5"/>
+                <constraint firstItem="iVU-OK-tA2" firstAttribute="width" secondItem="nx7-Ha-jQ7" secondAttribute="width" id="Q6e-lI-1Ej"/>
+                <constraint firstItem="iVU-OK-tA2" firstAttribute="height" secondItem="nx7-Ha-jQ7" secondAttribute="height" id="RdG-pk-aGX"/>
+                <constraint firstAttribute="trailing" secondItem="iVU-OK-tA2" secondAttribute="trailing" id="S5A-uB-OPa"/>
+                <constraint firstAttribute="bottom" secondItem="1ai-Ut-u26" secondAttribute="bottom" id="W9Q-wi-euR"/>
+                <constraint firstItem="zhl-iF-b4w" firstAttribute="top" secondItem="hRz-kP-vbe" secondAttribute="top" constant="10" id="bev-9G-7Qg"/>
+                <constraint firstAttribute="trailing" secondItem="1ai-Ut-u26" secondAttribute="trailing" id="enh-7i-kcJ"/>
+                <constraint firstItem="iVU-OK-tA2" firstAttribute="top" secondItem="hRz-kP-vbe" secondAttribute="top" id="j1P-wY-XGK"/>
+                <constraint firstItem="zhl-iF-b4w" firstAttribute="top" secondItem="iVU-OK-tA2" secondAttribute="top" id="tPa-OA-2fN"/>
+                <constraint firstItem="nx7-Ha-jQ7" firstAttribute="leading" secondItem="hRz-kP-vbe" secondAttribute="leading" id="yTx-VF-CzX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="82d-io-lTM"/>
+                    <exclude reference="bev-9G-7Qg"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="bg_btn" destination="1ai-Ut-u26" id="irw-8i-37y"/>
+                <outlet property="cate1" destination="nx7-Ha-jQ7" id="CZB-V4-ERI"/>
+                <outlet property="cate2" destination="iVU-OK-tA2" id="BlT-IN-bvE"/>
+            </connections>
+            <point key="canvasLocation" x="166.5" y="-62.5"/>
+        </view>
+    </objects>
+</document>

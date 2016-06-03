@@ -10,6 +10,9 @@ public class Common {
 	
 	public static final String LOACTION_APIKEY="20008c7c702bb093980d96a073e6f106";//高德定位
 	
+	public static final String[] TAB2_FILTER_STR={"智能排序","价格","推荐人数","销售数量"};
+	public static final String[] TAB3_FILTER_STR={"智能排序","星级","推荐人数"};
+	
 	public static final int LOGIN_REQUEST_CODE=1000;
 	public static final int LOGIN_RESPONSE_CODE=200;
 	

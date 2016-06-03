@@ -50,7 +50,7 @@
 		            android:layout_height="match_parent"
 		            android:layout_width="0dp"
 		            android:layout_weight="1"
-		            android:text="菜系  Cuisine ▼"
+		            android:text="菜系  Cuisine"
 		            android:textSize="@dimen/font_title"
 		            android:textColor="@color/white"
 		            android:background="@color/red"/>
@@ -66,7 +66,7 @@
 		            android:layout_weight="1"
 		            android:textSize="@dimen/font_title"
 		            android:textColor="@color/white"
-		            android:text="智能排序  Sort ▼"
+		            android:text="智能排序  Sort"
 		            android:background="@color/red"/>
 		    </LinearLayout>
 		    <android.support.v4.widget.SwipeRefreshLayout
@@ -83,6 +83,27 @@
 			        android:layout_marginRight="@dimen/pad_lv5"
 			        android:scrollbars="none"/>
 			   </android.support.v4.widget.SwipeRefreshLayout>
+			   	<LinearLayout 
+			    android:id="@+id/tab3_stub"
+			    android:layout_height="match_parent"
+			    android:layout_width="match_parent"
+			    android:layout_below="@id/tab3_ll"
+			    android:background="@color/black"
+			    android:orientation="horizontal">
+			    <ListView
+			        android:id="@+id/tab3_con_listview1" 
+			        android:layout_height="wrap_content"
+			        android:layout_width="0dp"
+			        android:layout_weight="1"
+			        android:background="@color/white"></ListView>
+			    <ListView
+			        android:id="@+id/tab3_con_listview2" 
+			        android:layout_height="wrap_content"
+			        android:layout_width="0dp"
+			        android:layout_weight="1"
+			        android:background="@color/white"></ListView>
+			    
+			</LinearLayout>
 		 </RelativeLayout>
 		 <RelativeLayout 
 	         android:id="@+id/tab3_loading_framlayout"

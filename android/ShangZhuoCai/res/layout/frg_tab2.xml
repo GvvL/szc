@@ -51,7 +51,7 @@
 		            android:layout_height="match_parent"
 		            android:layout_width="0dp"
 		            android:layout_weight="1"
-		            android:text="菜系  Cuisine ▼"
+		            android:text="品类  Cuisine"
 		            android:textSize="@dimen/font_title"
 		            android:textColor="@color/white"
 		            android:background="@color/red"/>
@@ -67,7 +67,7 @@
 		            android:layout_weight="1"
 		            android:textSize="@dimen/font_title"
 		            android:textColor="@color/white"
-		            android:text="智能排序  Sort ▼"
+		            android:text="智能排序  Sort"
 		            android:background="@color/red"/>
 		    </LinearLayout>
 		    <android.support.v4.widget.SwipeRefreshLayout

@@ -8,6 +8,12 @@ import butterknife.ButterKnife.ViewBinder;
 public class CartView$$ViewBinder<T extends com.aydc.szc.ui.CartView> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
+    view = finder.findRequiredView(source, 2131361844, "field 'mRecyclerView'");
+    target.mRecyclerView = finder.castView(view, 2131361844, "field 'mRecyclerView'");
+    view = finder.findRequiredView(source, 2131361843, "field 'cart_all_price'");
+    target.cart_all_price = finder.castView(view, 2131361843, "field 'cart_all_price'");
+    view = finder.findRequiredView(source, 2131361846, "field 'cart_all_price_bottom'");
+    target.cart_all_price_bottom = finder.castView(view, 2131361846, "field 'cart_all_price_bottom'");
     view = finder.findRequiredView(source, 2131361841, "field 'cart_sel' and method 'allSelClick'");
     target.cart_sel = finder.castView(view, 2131361841, "field 'cart_sel'");
     view.setOnClickListener(
@@ -28,12 +34,6 @@ public class CartView$$ViewBinder<T extends com.aydc.szc.ui.CartView> implements
           target.allSelClick(p0);
         }
       });
-    view = finder.findRequiredView(source, 2131361846, "field 'cart_all_price_bottom'");
-    target.cart_all_price_bottom = finder.castView(view, 2131361846, "field 'cart_all_price_bottom'");
-    view = finder.findRequiredView(source, 2131361843, "field 'cart_all_price'");
-    target.cart_all_price = finder.castView(view, 2131361843, "field 'cart_all_price'");
-    view = finder.findRequiredView(source, 2131361844, "field 'mRecyclerView'");
-    target.mRecyclerView = finder.castView(view, 2131361844, "field 'mRecyclerView'");
     view = finder.findRequiredView(source, 2131361822, "method 'deleCart'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
@@ -55,10 +55,10 @@ public class CartView$$ViewBinder<T extends com.aydc.szc.ui.CartView> implements
   }
 
   @Override public void unbind(T target) {
+    target.mRecyclerView = null;
+    target.cart_all_price = null;
+    target.cart_all_price_bottom = null;
     target.cart_sel = null;
     target.cart_sel_text = null;
-    target.cart_all_price_bottom = null;
-    target.cart_all_price = null;
-    target.mRecyclerView = null;
   }
 }

@@ -2,14 +2,9 @@ package com.aydc.szc.ui.frg;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.widget.PopupWindow;
-import android.widget.PopupWindow.OnDismissListener;
-
 import com.aydc.szc.R;
 import com.aydc.szc.app.App;
 import com.aydc.szc.entity.DishBean;
@@ -73,6 +68,7 @@ public class Tab2Presenter extends FrgP<Tab2View> implements OnRefreshListener,O
 			break;
 		}
 	}
+
 
 
 }

@@ -1,10 +1,14 @@
 package com.aydc.szc.adaper;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import com.aydc.szc.R;
+import com.aydc.szc.adaper.Tab2RecAdapter.MySort;
 import com.aydc.szc.app.Common;
 import com.aydc.szc.entity.ChefBean;
+import com.aydc.szc.entity.DishBean;
 import com.aydc.szc.ui.ChefDetailActivity;
 import com.aydc.szc.util.FontUtil;
 import com.bumptech.glide.Glide;
@@ -31,7 +35,7 @@ public class Tab3ChefAdapter extends RecyclerView.Adapter<Tab3ChefAdapter.ViewH>
 	private LayoutInflater inflater;
 	private Context mcontext;
 	ArrayList<ChefBean> chefs=new ArrayList<>();
-	
+	ArrayList<ChefBean> currchefs=new ArrayList<>();
 	public Tab3ChefAdapter(Context c) {
 		mcontext=c;
 		inflater=LayoutInflater.from(c);
@@ -39,18 +43,34 @@ public class Tab3ChefAdapter extends RecyclerView.Adapter<Tab3ChefAdapter.ViewH>
 	
 	public void setdata(ArrayList<ChefBean> che){
 		chefs=che;
+		filter(null, null);
+	}
+	public void filter(String f1,String f2){
+		if(f1==null||f1.equals("全部")){
+			currchefs=chefs;
+		}else{
+			currchefs=new ArrayList<>();
+			for(ChefBean db:chefs){
+				if(db.getStyle_name().equals(f1)){
+					currchefs.add(db);
+				}
+			}
+		}
+		//排序
+		if(f2!=null)
+		Collections.sort(currchefs, new MySort(f2));
 		this.notifyDataSetChanged();
 	}
 
 
 	@Override
 	public int getItemCount() {
-		return chefs.size();
+		return currchefs.size();
 	}
 
 	@Override
 	public void onBindViewHolder(ViewH vh, int arg1) {
-		final ChefBean cb=chefs.get(arg1);
+		final ChefBean cb=currchefs.get(arg1);
 		vh.cell_chef_desc.setText(cb.getDescription());
 		vh.cell_chef_rat.setText(cb.getMonicker());
 		vh.cell_chef_recommend.setText(Html.fromHtml("<u>   "+cb.getSupporter()+"人推荐   </u>"));
@@ -88,6 +108,28 @@ public class Tab3ChefAdapter extends RecyclerView.Adapter<Tab3ChefAdapter.ViewH>
 			super(itemView);
 			ButterKnife.bind(this, itemView);
 			FontUtil.init(1, cell_chef_desc,cell_chef_rat,cell_chef_recommend,cell_chef_type);
+		}
+		
+	}
+	class MySort implements Comparator<ChefBean>{
+		String type;
+		public MySort(String t) {
+			type=t;
+		}
+		@Override
+		public int compare(ChefBean lhs, ChefBean rhs) {
+			int comp = 0;
+			switch (type) {
+			case "星级":
+				comp=(int) (rhs.getGrade()*10-lhs.getGrade()*10);
+				break;
+			case "推荐人数":
+				comp=rhs.getSupporter()-lhs.getSupporter();
+				break;
+			default:
+				break;
+			}
+			return comp;
 		}
 		
 	}

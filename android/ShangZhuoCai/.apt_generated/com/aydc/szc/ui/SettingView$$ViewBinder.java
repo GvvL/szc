@@ -12,22 +12,13 @@ public class SettingView$$ViewBinder<T extends com.aydc.szc.ui.SettingView> impl
     target.set_cacche_size = finder.castView(view, 2131361929, "field 'set_cacche_size'");
     view = finder.findRequiredView(source, 2131361931, "field 'set_ban'");
     target.set_ban = finder.castView(view, 2131361931, "field 'set_ban'");
-    view = finder.findRequiredView(source, 2131361932, "method 'suggestClick'");
+    view = finder.findRequiredView(source, 2131361935, "method 'logout'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
         @Override public void doClick(
           android.view.View p0
         ) {
-          target.suggestClick(p0);
-        }
-      });
-    view = finder.findRequiredView(source, 2131361934, "method 'aboutClick'");
-    view.setOnClickListener(
-      new butterknife.internal.DebouncingOnClickListener() {
-        @Override public void doClick(
-          android.view.View p0
-        ) {
-          target.aboutClick(p0);
+          target.logout(p0);
         }
       });
     view = finder.findRequiredView(source, 2131361928, "method 'cacheClick'");
@@ -37,15 +28,6 @@ public class SettingView$$ViewBinder<T extends com.aydc.szc.ui.SettingView> impl
           android.view.View p0
         ) {
           target.cacheClick(p0);
-        }
-      });
-    view = finder.findRequiredView(source, 2131361935, "method 'logout'");
-    view.setOnClickListener(
-      new butterknife.internal.DebouncingOnClickListener() {
-        @Override public void doClick(
-          android.view.View p0
-        ) {
-          target.logout(p0);
         }
       });
     view = finder.findRequiredView(source, 2131361933, "method 'tuiClick'");
@@ -64,6 +46,24 @@ public class SettingView$$ViewBinder<T extends com.aydc.szc.ui.SettingView> impl
           android.view.View p0
         ) {
           target.banClick(p0);
+        }
+      });
+    view = finder.findRequiredView(source, 2131361934, "method 'aboutClick'");
+    view.setOnClickListener(
+      new butterknife.internal.DebouncingOnClickListener() {
+        @Override public void doClick(
+          android.view.View p0
+        ) {
+          target.aboutClick(p0);
+        }
+      });
+    view = finder.findRequiredView(source, 2131361932, "method 'suggestClick'");
+    view.setOnClickListener(
+      new butterknife.internal.DebouncingOnClickListener() {
+        @Override public void doClick(
+          android.view.View p0
+        ) {
+          target.suggestClick(p0);
         }
       });
   }
